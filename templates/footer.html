@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="static/styles.css" />
+  </head>
+  <body>
+    <footer>
+      
+      <img
+        src="{{ url_for('static', filename='img/logo.jpg') }}"
+        alt="logo"
+        width="25"
+        height="25px"
+      />
+      <h3>Code Alien</h3>
+      <div class="footer-social">
+      
+        <a href="https://github.com/rakshitbagait">  <img src="{{url_for('static',filename='img/github.png')}}" alt=""></a>
+        
+        <a href="https://www.instagram.com/rakshit_bagait/"><img src="{{url_for('static',filename='img/instagram.png')}}" alt=""></a>
+        
+        <a href="https://in.linkedin.com/in/rakshit-bagait-b175ab377"><img src="{{url_for('static',filename='img/linkedin.png')}}" alt=""></a>
+      </div>
+      <p>&copy; 2025 All rights are reserved to Code Alien and Rakshit Bagait</p>
+    </footer>
+  </body>
+</html>
