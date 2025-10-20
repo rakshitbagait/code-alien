@@ -1,0 +1,373 @@
+html {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    font-family: Cambria, serif;
+    color: white;
+    min-height: 100vh;
+    background-color: #000; /* optional, to fill space */
+}
+
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+    /* centers horizontally */
+    align-items: flex-start;
+    /* aligns items at the top */
+    gap: 10px;
+    /* space between logo and heading */
+    margin-top: 20px;
+    /* optional: moves the container down a bit */
+}
+
+.logo {
+    height: 90px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* @media only screen and (max-width:715)  { */
+h1 {
+
+    font-size: 100px;
+    margin: 0;
+    position: relative;
+    /* moves the heading up relative to its normal position */
+}
+
+
+.navbar {
+    height: 70px;
+    background-color: #399d20;
+    border-radius: 30px;
+}
+
+
+
+.navbar ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+    /* overflow: hidden; */
+    float: left;
+
+}
+
+.navbar li {
+    float: left;
+    list-style: none;
+    margin-left: 20px;
+
+
+}
+
+.navbar li :hover {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+}
+
+.navbar li:active {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+}
+
+.navbar li a {
+    padding: 3px 3px;
+    text-decoration: none;
+    color: white;
+    font-style: bold;
+    font-size: 30px;
+
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+
+
+h3 {
+    margin: 0px;
+    padding: -10px;
+    margin-left: 45%;
+    margin-top: 0px;
+    width: 200px;
+
+}
+
+footer {
+
+    height:auto ;
+    margin-top: 50px;
+    background-color: #399d20;
+    position: static;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 20px;
+    font-size: 20px;
+
+
+}
+
+footer p {
+    font-size: 10px;
+}
+
+footer img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 47%;
+
+}
+
+.footer-social {
+    height: 20px;
+    width: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 85%;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.footer-social img {
+    height: 25px;
+    width: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    margin-left: 5px;
+   
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    gap: 10px;
+
+
+}
+
+.social-links a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.social-links a:hover {
+    color: rgba(240, 248, 255, 0.736);
+    text-decoration: underline;
+}
+.sidebar{
+    position: fixed;
+    top:0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: #399d20;
+    box-shadow: -10px 0 10px rgba(221, 213, 213, 0.841);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    backdrop-filter: blur(50px);
+    border-top-left-radius: 30px;
+    gap :20px;
+}
+.sidbar li{
+    width: 100%;
+
+}
+.sidebar a{
+    width: 100%;
+}
+.menu{
+    margin-left: auto;
+    display: none;
+}
+.searchbar{
+
+    float: right;
+    margin-right:10px ;
+    margin-top: 25px;
+    height:20px ;
+    width: auto;
+    border-radius: 40px;
+    border: none;
+    background-color: #030303;
+    color: white;
+    font-size: 20px;
+}
+main{
+    flex:auto;
+}
+.about-container{
+    padding: 10px;
+    height: auto;
+    width: auto;
+    background-color:rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius:20px ;
+    box-shadow:-10px 0 20px #9a9a9a3d;
+    margin: 20px;
+
+}
+.contact-us{
+    padding: 10px;
+    height: auto;
+    width: auto;
+    background-color:rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius:20px ;
+    box-shadow:-10px 0 20px #9a9a9a3d;
+    margin: 20px;
+}
+.contact-us hr{
+    background-color: #399d20;
+    width: 100%;
+    border: 1px solid #399d20;
+    height: 2px;
+    border-radius: 2px;
+}
+#input{
+    margin-right:10px ;
+    margin-top: 25px;
+    height:30px ;
+    width: 90%;
+    border-radius: 50px;
+    border: none;
+    background-color: #030303;
+    color: white;
+    font-size: 20px;
+     text-align: left;
+     
+}
+.contact-us textarea{
+    margin-right:10px ;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height:100px;
+    width: 90%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border: none;
+    background-color: #030303;
+    color: white;
+    font-size: 20px;
+    text-align: left;
+    text-indent: 10px ;
+}
+.contact-us button{
+    margin-left: 70%;
+    width: 20vh;
+    height: 40px;
+    border-radius:10px ;
+    background-color: #399d20;
+    color: aliceblue;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+.contact-us button:hover{
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+@media only screen and (max-width:800px) {
+    h1 {
+
+        font-size: 50px;
+        margin: 0;
+        position: relative;
+        top: -15px;
+        word-wrap: break-word;
+        /* moves the heading up relative to its normal position */
+    }
+
+    .logo {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+    }
+
+    /* .navbar {
+        display: block;
+        height: 50px;
+        font-size: 10px;
+        justify-content: right;
+        padding: -40px;
+
+        
+    } */
+
+    footer {
+        font-size: 20px;
+            height:auto ;
+    margin-top: 50px;
+    background-color: #399d20;
+    position: static;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 20px;
+    font-size: 20px;
+    }
+
+    .footer-social {
+        height: 20px;
+        width: 10px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 95%;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    .footer-social img {
+        height: 20px;
+        width: 20px;
+        margin-left: 5px;
+        margin-right: 0px;
+    }
+    .hideOnMobile{
+        display: none;
+    }
+    .menu{
+        display:block;
+
+    }
+    .searchbar{
+    float: right;
+    margin-right:10px ;
+    margin-top: 15px;
+    height:40px ;
+    width: auto;
+    border-radius: 50px;
+    border: none;
+    background-color: #030303;
+    color: white;  
+    }
+
+}
