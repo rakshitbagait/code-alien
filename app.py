@@ -1,8 +1,16 @@
-from flask import Flask, render_template,url_for
+from flask import Flask, render_template,url_for,request
 
-
+from flask_mail import Mail,Message
+import os 
+from dotenv import load_dotenv
+load_dotenv()
 app = Flask(__name__)
-
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.getenv('MY_EMAIL')  # your email
+app.config['MAIL_PASSWORD'] = os.getenv('MY_PASSWORD')  # your app password
+mail = Mail(app)
 @app.route("/")
 def home():
     return render_template('index.html')
@@ -14,6 +22,24 @@ def about():
 
 def contact():
     return render_template("contact.html")
+@app.route("/send_email",methods=["POST"])
+def send_email():
+    if request.method == 'POST':
+        Name = request.form['Name']
+        email = request.form['email']
+        message = request.form['message']
+        msg = Message(subject= "Contact us Form submission",
+                      sender=email,
+                      recipients=[os.getenv('MY_EMAIL')],
+                      body=f"From:{Name}\nEmail:{email}\n\nMessage:\n{message}")
+        try:
+            mail.send(msg)
+            return render_template("contact.html", message="Your message has been sent successfully!")
 
+        except Exception as e:
+            print(e)
+            return render_template("contact.html", message="Something went wrong. Please try again.")
+    
+    return render_template("contact.html")
 if __name__ == "__main__":
     app.run(debug =True)
