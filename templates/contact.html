@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'base.html' %}
+    {%include 'header.html' %}
+    <form method="POST"action="{{url_for('send_email')}}">
+    <div class="contact-us">
+        <input type="text" name="email" id="input" placeholder="Enter your Email" required="required">
+        <hr>
+        <input type="text" name="Name" id="input" placeholder="Enter your full name" required = "required">
+        <hr>
+        <textarea name="message" placeholder="Enter your message" required="required"></textarea>
+        <hr>
+        <button >Submit</button>
+    {% if message %}
+    <p style="font-size: 30px;">{{ message }}</p>
+    <hr>
+  {% endif %}
+
+    </div>
+    </form>
+{%include 'footer.html' %}
+    
+
+</body>
+</html>
