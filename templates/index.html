@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code Alien</title>
-  </head>
-  <body>
-    {% include 'base.html' %}
-    {%include 'header.html' %}
-    {%include 'footer.html' %}
-    
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Alien</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+  {% include 'base.html' %}
+  {%include 'header.html' %}
+
+  <h2>Featured</h2>
+  <div class="blog-list">
+    <ul>
+      {% for b in blogs[:5]%}
+      <div class="blog-label">
+        <div class="blog-img">
+          <img src="{{url_for('static',filename =b['image'])}}" alt="Thumbnail">
+        </div>
+              <div class="title">
+          <li><a href="{{url_for('show_blog',blog_id = b['blog_id'])}}">{{b.blog_title}}</a></li>
+        </div>
+        </div>
+      
+
+        {% endfor %}
+    </ul>
+  </div>
+
+</body>
+{%include 'footer.html' %}
+
 </html>
