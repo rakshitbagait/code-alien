@@ -33,13 +33,13 @@ body {
     border-radius: 50%;
 }
 
-/* @media only screen and (max-width:715)  { */
+
 h1 {
 
     font-size: 100px;
     margin: 0;
     position: relative;
-    /* moves the heading up relative to its normal position */
+
 }
 
 
@@ -112,7 +112,7 @@ h3 {
 
 footer {
 
-    height:auto ;
+    height:auto;
     margin-top: 50px;
     background-color: #399d20;
     position: static;
@@ -120,6 +120,7 @@ footer {
     border-top-right-radius: 50px;
     padding: 20px;
     font-size: 20px;
+    margin-bottom: 0;
 
 
 }
@@ -180,9 +181,9 @@ footer img {
 }
 .sidebar{
     position: fixed;
-    top:0;
+    top:100px;
     right: 0;
-    height: 100vh;
+    height:100%;
     width: 250px;
     z-index: 999;
     background-color: #399d20;
@@ -193,6 +194,7 @@ footer img {
     justify-content: flex-start;
     backdrop-filter: blur(50px);
     border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     gap :20px;
 }
 .sidbar li{
@@ -210,9 +212,9 @@ footer img {
 
     float: right;
     margin-right:10px ;
-    margin-top: 25px;
-    height:20px ;
-    width: auto;
+    margin-top: 18px;
+    height:40px ;
+    width: 40%;
     border-radius: 40px;
     border: none;
     background-color: #030303;
@@ -281,20 +283,112 @@ main{
     text-indent: 10px ;
 }
 .contact-us button{
-    margin-left: 70%;
-    width: 20vh;
+    display: block;
+
+    font-family: Cambria, serif;
+    margin: 10 ;
+
+    width: 150px;
     height: 40px;
     border-radius:10px ;
     background-color: #399d20;
     color: aliceblue;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight:bolder ;
     border: none;
     cursor: pointer;
+    transition: background-color 0.8s;
+
+
 }
 .contact-us button:hover{
+    transition: background-color 0.4s;
+    /* background-color: rgba(255, 255, 255, 0.04); */
+    background-color: #256a13;
+}   
+.contact-us button:active{
     background-color: rgba(255, 255, 255, 0.04);
+    opacity: 0.5;
 }
+.blog-list{
+    display: flex;
 
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    justify-content: center;
+    margin: 10px;
+    flex-direction: column;
+
+
+}
+.blog-list ul{
+    list-style-type: none;
+
+}
+.blog-label{
+    display: flex;
+    height: 150px;
+    background-color: #256a13;
+    margin: 10px;
+    border-radius: 5px;
+    gap: 10px;
+    font-size: 30px;
+    font-display: block;
+    align-items: center;
+
+
+}
+.blog-img{
+    display: flex;
+    height: 120px;
+    width: 30%;;
+    background-color: #000000;
+    /* margin-top :15px; */
+    /* margin-bottom: 10px; */
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.blog-img img{
+    height: 90%;
+    width: 90%;
+}
+.title{
+    margin: 10px;
+    padding: 10px;
+
+}
+.title li a{
+     text-decoration: none;
+    color: white;
+
+}
+.title li a:hover{
+     text-decoration: underline;
+    color: white;
+
+}
+h2 {
+    margin-left: 10px;
+    font-size: 50px;
+}
+.blog-temp{
+
+
+    padding: 10px;
+    height: auto;
+    width: auto;
+    background-color:rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius:20px ;
+    box-shadow:-10px 0 20px #9a9a9a3d;
+    margin: 20px;
+    font-size: 20px;
+
+}
 @media only screen and (max-width:800px) {
     h1 {
 
@@ -332,6 +426,7 @@ main{
     border-top-right-radius: 50px;
     padding: 20px;
     font-size: 20px;
+    margin-bottom: 10px;
     }
 
     .footer-social {
@@ -363,7 +458,7 @@ main{
     margin-right:10px ;
     margin-top: 15px;
     height:40px ;
-    width: auto;
+    width: 70%;
     border-radius: 50px;
     border: none;
     background-color: #030303;
