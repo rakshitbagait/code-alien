@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-      <div class="logo_container">
-        <h1>CODE</h1>
-        <img
-          class="logo"
-          src="{{ url_for('static', filename='img/logo.jpg') }}"
-          alt="logo"
-        />
-        <h1>ALIEN</h1>
-      </div>
-      <div class="navbar">
-        <nav >
-          <ul>
-            <li><a href="home.html"> Home </a></li>
-            <li><a href="contact.html"> Contact us </a></li>
-            <li><a href="about.html"> About </a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <hr />
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo_container">
+      <h1>CODE</h1>
+      <img class="logo" src="{{ url_for('static', filename='img/logo.jpg') }}" alt="logo" />
+      <h1>ALIEN</h1>
+    </div>
+    <div class="navbar">
+      <nav>
+        <ul class="sidebar">
+          <li onclick=hideSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#e3e3e3">
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+              </svg></a></li>
+          <li><a href="{{url_for('home')}}"> Home </a></li>
+          <li><a href="{{url_for('contact')}}"> Contact us </a></li>
+          <li><a href="{{url_for('about')}}"> About </a></li>
+        </ul>
+        <ul>
+
+          <li  class ="hideOnMobile"><a href="{{url_for('home')}}"> Home </a></li>
+          <li class ="hideOnMobile"><a href="{{url_for('contact')}}"> Contact us </a></li>
+          <li class ="hideOnMobile"><a href="{{url_for('about')}}"> About </a></li>
+          <li class ="menu"onclick=showSidebar()><a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#e3e3e3">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <input type="text" placeholder="Search Blogs" class="searchbar">
+
+      </nav>
+    </div>
+  </header>
+  <hr />
+  <script>
+    function showSidebar() {
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'flex'
+    }
+    function hideSideBar(){
+            const sidebar = document.querySelector('.sidebar')
+      sidebar.style.display = 'none'
+    }
+  </script>
+</body>
+
 </html>
