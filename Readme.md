@@ -1,11 +1,13 @@
 
 ---
+<img src ="static/img/logo.jpg" style ="border-radius:50%; height:100px;width:100px">
 
 # 🪶 My Personal Blog — Powered by Flask
 
 A clean, responsive, and dynamic **personal blog web app** built using **Flask**, designed to share thoughts, showcase projects, and connect through a beautiful contact section with real-time email integration.
 
 ---
+![alt](static\img\image.png)
 
 ## 🌟 Features
 
@@ -92,9 +94,11 @@ blog/
 │   ├── index.html
 │   ├── about.html
 │   ├── contact.html
-│   └── post.html
+│   └── template.html
+|   
 │
 └── README.md
+
 ```
 
 ---
