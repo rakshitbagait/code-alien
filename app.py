@@ -5,6 +5,9 @@ import os
 from dotenv import load_dotenv
 import mysql.connector
 import markdown
+from smtplib import SMTP
+
+
 load_dotenv()
 app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -39,7 +42,7 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route("/contact")
+@app.route("/contact",methods = ['GET','POST'])
 
 def contact():
     return render_template("contact.html")
@@ -53,14 +56,35 @@ def send_email():
                       sender=email,
                       recipients=[os.getenv('MY_EMAIL')],
                       body=f"From:{Name}\nEmail:{email}\n\nMessage:\n{message}")
+        
+        subject =f"Hello {Name} from Code Alien"
+        my_message =f"""Hey {Name} thank you for contacting us . 
+        This is an auto generated message.
+        Till than keep exploring our blogs :)."""
+            
         try:
             mail.send(msg)
+            try:
+                with SMTP("smtp.gmail.com",587) as connection:
+                    connection.starttls()
+                    connection.login(os.getenv("MY_EMAIL"),os.getenv("MY_PASSWORD"))
+                    connection.sendmail(
+                        from_addr=os.getenv('MY_EMAIL'),
+                        to_addrs=email,
+                        msg=f"Subject:{subject}\n\n{my_message}"
+                    )
+            except Exception as e:
+                        print("nahi gaya mail",e)
             return render_template("contact.html", message="Your message has been sent successfully!")
 
         except Exception as e:
             print(e)
             return render_template("contact.html", message="Something went wrong. Please try again.")
-    
+    #sending the reply of the user through mail
+
+
+
+
     return render_template("contact.html")
 
 @app.route("/blog/<int:blog_id>")
