@@ -17,6 +17,7 @@ app.config['MAIL_USERNAME'] = os.getenv('MY_EMAIL')  # your email
 app.config['MAIL_PASSWORD'] = os.getenv('MY_PASSWORD')  # your app password
 mail = Mail(app)
 
+     
 def get_db_connection():
     c_alien_db = mysql.connector.connect(
         host="localhost",
@@ -28,6 +29,15 @@ def get_db_connection():
         use_pure = True
     )
     return c_alien_db
+def contact_db(email,name,message):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO contacts (email, name, message) VALUES (%s,%s,%s)",(email,name,message))
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return 0
+
 @app.route("/")
 def home():
     conn = get_db_connection()
@@ -48,6 +58,7 @@ def contact():
     return render_template("contact.html")
 @app.route("/send_email",methods=["POST"])
 def send_email():
+
     if request.method == 'POST':
         Name = request.form['Name']
         email = request.form['email']
@@ -73,6 +84,7 @@ def send_email():
                         to_addrs=email,
                         msg=f"Subject:{subject}\n\n{my_message}"
                     )
+                    contact_db(email,Name,message)
             except Exception as e:
                         print("nahi gaya mail",e)
             return render_template("contact.html", message="Your message has been sent successfully!")
